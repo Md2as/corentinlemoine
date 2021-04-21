@@ -1,0 +1,230 @@
+/* BODY */
+body, html{
+    height: 100%;
+    margin: 0;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+body{
+    background: #f7f7f7;
+    color: rgba(0,0,0,0.8);
+    font-family: cursive;
+    font-size: 15px;
+}
+.bg-img{
+    background-image: linear-gradient(180deg,rgba(42,134,192,.8) 0%,rgba(42,134,192,.8) 100%), url("../images/web-design.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+}
+.logo{
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    height: auto;
+    margin-top: 15%;
+    left: 0;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+}
+span.prenom{
+    color: #9A0606;
+}
+span.nom{
+    color: #083B66;
+}
+.ico {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 88%;
+}
+.ico .circle {
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: 0%;
+  }
+.ico .st-arrow{
+    fill:#55544F;
+    animation: scrolly 3s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards infinite;
+    perspective: 9000px;
+    transform: translateZ(0);
+    transform-origin: bottom;
+  }
+.svg {z-index:9;position:relative;}
+@keyframes scrolly {
+    0% {
+        transform: translate3d(0,-150%,0) rotateX(90deg) scale(0.5) skewX(3deg);
+    }
+    30% {
+        transform: translate3d(0,0,0) rotateX(0deg) scale(1) skewX(0deg);
+    }
+    70% {
+        transform: translate3d(0,0,0) rotateX(0deg) scale(1) skewX(0deg);
+    }
+    95% {
+        transform: translate3d(0,50%,0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+    }
+    100% {
+        transform: translate3d(0,50%,0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+    }
+}
+
+.second_titre{
+    color: white;
+    background-color: #4080A8;
+    font-family: cursive;
+    font-weight: 900;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 60px;
+    line-height: 1.2em;
+}
+div#presentation {
+    width: auto;
+    position: relative;
+    display: inline-block;
+}
+.section-portrait{
+    width: 500px;
+    height: 500px;
+    float: left;
+}
+.portrait{
+    max-width: 60%;
+    max-height: 60%;
+    margin: calc(600px - (600px - 20%));
+}
+.texte-presentation{
+    float: left;
+    margin-block-start: 5em;
+    font-family: cursive;
+    line-height: 1.8em;
+    font-size: 17px;
+}
+.texte-presentation .a_propos {
+        margin-bottom: 5%;
+}
+
+p.test {
+    font-size: 20px;
+}
+
+div#competences {
+    position: relative;
+    padding-bottom: 25%;
+}
+
+div#competences h2 {
+    position: absolute;
+    left: 28%;
+}
+
+ul.liste_competences {
+    width: 75%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    columns: 2;
+    list-style:none;
+}
+
+li.comp {
+    background-color: rgba(26, 27, 33, 0.3);
+    margin: auto 30% 5% auto;
+    position: relative;
+    padding: 20px;
+}
+
+span.comp1 {
+    width: 60%;
+}
+span.comp2 {
+    width: 80%;
+}
+span.comp3 {
+    width: 70%;
+}
+span.comp4 {
+    width: 75%;
+}
+span.comp5 {
+    width: 70%;
+}
+span.comp6 {
+    width: 60%;
+}
+span.comp7 {
+    width: 65%;
+}
+span.comp8 {
+    width: 90%;
+}
+
+span.pctge {
+    display: block;
+    background-color: rgba(26, 27, 33, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+span.pctge p {
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+    margin: 0;
+}
+
+.texte_ci {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.texte_ci p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.en_travaux {
+    text-align: center;
+    font-size: 24px;
+    color: #9A0606;
+    margin: 75px;
+}
+
+div.texte_ci a img {
+    width: 20%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+footer p {
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+footer p a {
+    color: white;
+}
+
+/* Fin BODY */
