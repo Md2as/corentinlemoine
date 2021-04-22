@@ -1,0 +1,34 @@
+name: Publish to GitHub pages
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    publish-pages:
+        environment:
+            name: main
+            url: https://corentin.wdes.fr
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+                  ssh-key: ${{ secrets.SSH_KEY_DEPLOY }}
+            - name: Build and push
+              run: |
+                  set -o xtrace
+                  make build
+                  TEMP_DIR="$(mktemp -d --suffix=_website_corentin)"
+                  cp -rp corentin.wdes.fr/public "${TEMP_DIR}"
+                  git checkout gh-pages
+                  git ls-files | xargs -r -n 1 rm
+                  rm -rfd ./*
+                  mv "${TEMP_DIR}"/public/* ./
+                  rm -rf "${TEMP_DIR}"
+                  echo 'corentin.wdes.fr' > CNAME
+                  git add -A
+                  git commit --allow-empty -m "Content update ($(date --utc))"
+                  git push

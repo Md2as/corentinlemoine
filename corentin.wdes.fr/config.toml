@@ -1,0 +1,14 @@
+baseURL = "https://corentin.wdes.fr/"
+languageCode = "fr"
+title = "Corentin Lemoine"
+copyright = "2017-2021 Lemoine Corentin"
+defaultContentLanguage = "fr"
+enableRobotsTXT = true
+uglyURLs = true
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.fr]
+    title = "Corentin Lemoine"
+    description = "Site web de Corentin Lemoine"
+    weight = 1
