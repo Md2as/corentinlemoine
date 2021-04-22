@@ -1,21 +1,30 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="{{ .Lang }}">
 	<head>
-		<title>Corentin Lemoine</title>
+        <title>{{ .Title }}</title>
+        <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/main.css" />
+        <!-- Template Main CSS File -->
+        {{ $options := (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+        {{ $mainStyle := resources.Get "css/main.scss"
+            | resources.ExecuteAsTemplate "css/main.scss" .
+            | resources.ToCSS $options
+            | minify
+            | fingerprint "sha512" }}
+        <link href="{{ $mainStyle.Permalink }}" rel="stylesheet" integrity="{{ $mainStyle.Data.Integrity }}" crossorigin="anonymous">
+        <link rel="preload" href="{{ $mainStyle.Permalink }}" as="style"integrity="{{ $mainStyle.Data.Integrity }}" crossorigin="anonymous">
 	</head>
 	<body>
         <div class="bg-img">
             <div class="logo">
-                <img src="images/logo.png">
+                <img alt="Logo" src="{{ .Site.BaseURL }}assets/images/logo.png">
                 <h1>
                     <span class="prenom">CORENTIN</span> <span class="nom" >LEMOINE</span>
                 </h1>
             </div>
             <div class="ico animated">
-                <a href="#presentation">
+                <a href="#presentation" title="Présentation">
                     <div class="circle circle-main"></div>
                     <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" >
                         <path  class="st-arrow" d="M317.5,487.6c0.3-0.3,0.4-0.7,0.7-1.1l112.6-112.6c6.3-6.3,6.3-16.5,0-22.7c-6.3-6.3-16.5-6.3-22.7,0
@@ -30,7 +39,7 @@
         	<!-- A propos -->
         <div id="presentation">
             <div class="section-portrait">
-                <img class="portrait" src="images/boy.png">
+                <img class="portrait" alt="Portrait" src="{{ .Site.BaseURL }}assets/images/boy.png">
             </div>
             <div class="texte-presentation">
                 <h2 class="a_propos second_titre">À propos</h2>
@@ -85,13 +94,13 @@
             <h2 class="second_titre">Centres d'intérêts</h2>
             <div class="texte_ci">
                 <p><strong>Athlétisme</strong> Je pratique ce sport depuis l'âge de 5 ans et participe activement aux compétitions.</p>
-                    <a href="http://bases.athle.com/asp.net/athletes.aspx?base=bilans&seq=465346534455485147524950" target="_blank"><img src="images/javelot.png"/></a>
+                    <a href="http://bases.athle.com/asp.net/athletes.aspx?base=bilans&seq=465346534455485147524950" target="_blank"><img alt="Javelot" src="{{ .Site.BaseURL }}assets/images/javelot.png"></a>
                 <p><strong>Séries et romans policier</strong> Les enquêtes policières et le suspense me plaisent beaucoup</p>
             </div>
         </div>
     </body>
 
     <footer class="footer">
-		<p><a href="/mentionslegales.php">mentions légales</a><br />&copy; 2017-2019 | Lemoine Corentin</p>
+		<p><a href="/mentionslegales.php">mentions légales</a><br />&copy; {{ .Site.Copyright }}</p>
 	</footer>
 </html>
