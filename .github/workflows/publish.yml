@@ -17,7 +17,7 @@ jobs:
               with:
                   fetch-depth: 0
                   ssh-key: ${{ secrets.SSH_KEY_DEPLOY }}
-            - name: Set commit author
+            - name: Set git commit author
               run: |
                 git config --global user.email "${{ secrets.GIT_COMMIT_AUTHOR_EMAIL }}"
                 git config --global user.name "${{ secrets.GIT_COMMIT_AUTHOR_NAME }}"
