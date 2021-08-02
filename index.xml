@@ -7,5 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
     <copyright>2017-2021 Lemoine Corentin</copyright><atom:link href="https://corentin.wdes.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://corentin.wdes.fr/mentions-legales.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://corentin.wdes.fr/mentions-legales.html</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
